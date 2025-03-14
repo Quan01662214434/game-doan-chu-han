@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Đoán Chữ Hán</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Game Đoán Chữ Hán</h1>
+        <div id="game">
+            <p id="question">Câu hỏi sẽ hiển thị ở đây</p>
+            <input type="text" id="answer" placeholder="Nhập đáp án của bạn...">
+            <button onclick="checkAnswer()">Kiểm tra</button>
+            <p id="feedback"></p>
+        </div>
+        <div id="scoreboard">
+            <h2>Bảng Xếp Hạng</h2>
+            <ul id="scores"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
