@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Đoán Chữ Hán</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        #hanzi { font-size: 50px; margin: 20px; }
+        #result { margin-top: 20px; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Game Đoán Chữ Hán</h1>
+    <div id="hanzi">汉</div>
+    <input type="text" id="answer" placeholder="Nhập nghĩa tiếng Việt">
+    <button onclick="checkAnswer()">Kiểm tra</button>
+    <div id="result"></div>
+
+    <script>
+        const words = [
+            { hanzi: "汉", meaning: "Hán" },
+            { hanzi: "水", meaning: "Nước" },
+            { hanzi: "火", meaning: "Lửa" },
+            { hanzi: "山", meaning: "Núi" },
+            { hanzi: "日", meaning: "Mặt trời" }
+        ];
+        
+        let currentWord = words[Math.floor(Math.random() * words.length)];
+        document.getElementById("hanzi").innerText = currentWord.hanzi;
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById("answer").value.trim();
+            let result = document.getElementById("result");
+            
+            if (userAnswer === currentWord.meaning) {
+                result.innerText = "✅ Chính xác!";
+                result.style.color = "green";
+            } else {
+                result.innerText = "❌ Sai rồi, thử lại!";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
